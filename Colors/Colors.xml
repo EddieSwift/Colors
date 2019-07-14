@@ -1,0 +1,73 @@
+<colors>
+    <color>
+        <name>Red</name>
+        <code>#FF0000</code>
+    </color>
+    
+    <color>
+        <name>Green</name>
+        <code>#00FF00</code>
+    </color>
+    
+    <color>
+        <name>Blue</name>
+        <code>#0000FF</code>
+    </color>
+    
+    <color>
+        <name>Yellow</name>
+        <code>#FFFF00</code>
+    </color>
+    
+    <color>
+        <name>Lime</name>
+        <code>#00FF00</code>
+    </color>
+    
+    <color>
+        <name>Aqua</name>
+        <code>#00FFFF</code>
+    </color>
+    
+    <color>
+        <name>Orange</name>
+        <code>#FFA500</code>
+    </color>
+    
+    <color>
+        <name>Teal</name>
+        <code>#008080</code>
+    </color>
+    
+    <color>
+        <name>Purple</name>
+        <code>#800080</code>
+    </color>
+    
+    <color>
+        <name>Coral</name>
+        <code>#FF7F50</code>
+    </color>
+    
+    <color>
+        <name>Maroon</name>
+        <code>#800000</code>
+    </color>
+    
+    <color>
+        <name>Navy</name>
+        <code>#000080</code>
+    </color>
+    
+    <color>
+        <name>Silver</name>
+        <code>#C0C0C0</code>
+    </color>
+    
+    <color>
+        <name>Black</name>
+        <code>#000000</code>
+    </color>
+    
+</colors>
+

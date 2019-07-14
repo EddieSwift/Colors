@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		2CF6DB3C22DA0CA400A80B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6DB3B22DA0CA400A80B72 /* AppDelegate.swift */; };
-		2CF6DB3E22DA0CA400A80B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6DB3D22DA0CA400A80B72 /* ViewController.swift */; };
 		2CF6DB4122DA0CA400A80B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB3F22DA0CA400A80B72 /* Main.storyboard */; };
 		2CF6DB4322DA0CA500A80B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB4222DA0CA500A80B72 /* Assets.xcassets */; };
-		2CF6DB4622DA0CA500A80B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB4422DA0CA500A80B72 /* LaunchScreen.storyboard */; };
+		2CF6DB4E22DA0CC600A80B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB4D22DA0CC600A80B72 /* LaunchScreen.storyboard */; };
+		2CF6DB5022DA0D4B00A80B72 /* ColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6DB4F22DA0D4B00A80B72 /* ColorsTableViewController.swift */; };
+		2CF6DB5322DA0D9600A80B72 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF6DB5122DA0D9600A80B72 /* ColorTableViewCell.swift */; };
+		2CF6DB5422DA0D9600A80B72 /* ColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB5222DA0D9600A80B72 /* ColorTableViewCell.xib */; };
+		2CF6DB5822DA2BA300A80B72 /* Colors.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2CF6DB5722DA2BA300A80B72 /* Colors.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CF6DB3822DA0CA400A80B72 /* Colors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF6DB3B22DA0CA400A80B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CF6DB3D22DA0CA400A80B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CF6DB4022DA0CA400A80B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CF6DB4222DA0CA500A80B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2CF6DB4522DA0CA500A80B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CF6DB4722DA0CA500A80B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF6DB4D22DA0CC600A80B72 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CF6DB4F22DA0D4B00A80B72 /* ColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewController.swift; sourceTree = "<group>"; };
+		2CF6DB5122DA0D9600A80B72 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		2CF6DB5222DA0D9600A80B72 /* ColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTableViewCell.xib; sourceTree = "<group>"; };
+		2CF6DB5722DA2BA300A80B72 /* Colors.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Colors.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,32 @@
 			isa = PBXGroup;
 			children = (
 				2CF6DB3B22DA0CA400A80B72 /* AppDelegate.swift */,
-				2CF6DB3D22DA0CA400A80B72 /* ViewController.swift */,
+				2CF6DB5622DA0DB200A80B72 /* Controllers */,
+				2CF6DB5522DA0DA100A80B72 /* Views */,
 				2CF6DB3F22DA0CA400A80B72 /* Main.storyboard */,
 				2CF6DB4222DA0CA500A80B72 /* Assets.xcassets */,
-				2CF6DB4422DA0CA500A80B72 /* LaunchScreen.storyboard */,
 				2CF6DB4722DA0CA500A80B72 /* Info.plist */,
+				2CF6DB4D22DA0CC600A80B72 /* LaunchScreen.storyboard */,
+				2CF6DB5722DA2BA300A80B72 /* Colors.xml */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		2CF6DB5522DA0DA100A80B72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6DB5122DA0D9600A80B72 /* ColorTableViewCell.swift */,
+				2CF6DB5222DA0D9600A80B72 /* ColorTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CF6DB5622DA0DB200A80B72 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6DB4F22DA0D4B00A80B72 /* ColorsTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +147,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF6DB4622DA0CA500A80B72 /* LaunchScreen.storyboard in Resources */,
+				2CF6DB4E22DA0CC600A80B72 /* LaunchScreen.storyboard in Resources */,
+				2CF6DB5422DA0D9600A80B72 /* ColorTableViewCell.xib in Resources */,
 				2CF6DB4322DA0CA500A80B72 /* Assets.xcassets in Resources */,
+				2CF6DB5822DA2BA300A80B72 /* Colors.xml in Resources */,
 				2CF6DB4122DA0CA400A80B72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF6DB3E22DA0CA400A80B72 /* ViewController.swift in Sources */,
 				2CF6DB3C22DA0CA400A80B72 /* AppDelegate.swift in Sources */,
+				2CF6DB5022DA0D4B00A80B72 /* ColorsTableViewController.swift in Sources */,
+				2CF6DB5322DA0D9600A80B72 /* ColorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +177,6 @@
 				2CF6DB4022DA0CA400A80B72 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2CF6DB4422DA0CA500A80B72 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF6DB4522DA0CA500A80B72 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
