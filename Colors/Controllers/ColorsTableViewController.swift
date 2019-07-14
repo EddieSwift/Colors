@@ -113,35 +113,22 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         
         return unselectedCellHeight
     }
-
+    
     // MARK: XML Parser Methods
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
         if elementName == "color" {
-            colorName = String()
-            colorCode = String()
-        }
-        
-        self.elementName = elementName
-    }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "color" {
-            let color = Color(colorName: colorName, colorCode: colorCode)
-            colors.append(color)
-        }
-    }
-    
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        
-        let data = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
-        if (!data.isEmpty) {
-            if self.elementName == "name"{
-                colorName += data
-            } else if self.elementName == "code" {
-                colorCode += data
+            
+            var tempColor: Color = Color(colorName: "", colorCode: "")
+            
+            if let name = attributeDict["name"] {
+                tempColor.colorName = name
             }
+            
+            if let code = attributeDict["color"] {
+                tempColor.colorCode = code
+            }
+            colors.append(tempColor)
         }
     }
     

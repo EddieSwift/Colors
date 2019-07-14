@@ -1,0 +1,21 @@
+<colors>
+    <color name="Red" color="#FF0000"/>
+    <color name="Green" color="#00FF00"/>
+    <color name="Blue" color="#0000FF"/>
+    
+    <color name="Yellow" color="#FFFF00"/>
+    <color name="Lime" color="#00FF00"/>
+    <color name="Aqua" color="#00FFFF"/>
+    
+    <color name="Orange" color="#FFA500"/>
+    <color name="Teal" color="#008080"/>
+    <color name="Purple" color="#800080"/>
+    
+    <color name="Coral" color="#FF7F50"/>
+    <color name="Maroon" color="#800000"/>
+    <color name="Navy" color="#000080"/>
+    
+    <color name="Silver" color="#C0C0C0"/>
+    <color name="Black" color="#000000"/>
+</colors>
+

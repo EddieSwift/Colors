@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ColorTableViewCell: UITableViewCell {
+final class ColorTableViewCell: UITableViewCell {
     
     // MARK: Outlets
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var colorNameLabel: UILabel!
+    @IBOutlet private weak var cellView: UIView!
+    @IBOutlet private weak var colorNameLabel: UILabel!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,7 +22,7 @@ class ColorTableViewCell: UITableViewCell {
         cellView.layer.cornerRadius = 8.0
         cellView.clipsToBounds = true
     }
-
+    
     func configureWith(color: Color) {
         
         self.colorNameLabel.text = color.colorName
@@ -60,8 +60,7 @@ class ColorTableViewCell: UITableViewCell {
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
+            alpha: CGFloat(1.0))
     }
     
 }

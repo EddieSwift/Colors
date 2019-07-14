@@ -64,10 +64,10 @@
 				2CF6DB5622DA0DB200A80B72 /* Controllers */,
 				2CF6DB5522DA0DA100A80B72 /* Views */,
 				2CF6DB3F22DA0CA400A80B72 /* Main.storyboard */,
+				2CF6DB5922DB71DA00A80B72 /* Models */,
 				2CF6DB4222DA0CA500A80B72 /* Assets.xcassets */,
 				2CF6DB4722DA0CA500A80B72 /* Info.plist */,
 				2CF6DB4D22DA0CC600A80B72 /* LaunchScreen.storyboard */,
-				2CF6DB5722DA2BA300A80B72 /* Colors.xml */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -87,6 +87,14 @@
 				2CF6DB4F22DA0D4B00A80B72 /* ColorsTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2CF6DB5922DB71DA00A80B72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CF6DB5722DA2BA300A80B72 /* Colors.xml */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
