@@ -10,11 +10,10 @@ import UIKit
 
 struct Color {
     var colorName: String
-    var colorCode: String
+    var colorCode: UIColor
 }
 
 var selectedCellIndexPath: IndexPath?
-var unselectedCellIndexPath: Bool?
 let selectedCellHeight: CGFloat = 240.0
 let unselectedCellHeight: CGFloat = 60.0
 
@@ -45,12 +44,21 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         return colors.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorTableViewCell {
         
         let cell = Bundle.main.loadNibNamed("ColorTableViewCell", owner: self, options: nil)?.first as! ColorTableViewCell
         
         let color = colors[indexPath.row]
         cell.configureWith(color: color)
+        
+        // select/deselect the cell
+        if cell.isSelected {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+            cell.configureWithSelect(color: color)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: false)
+            cell.configureWithDeselect(color: color)
+        }
         
         return cell
     }
@@ -68,40 +76,27 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         }
         
         tableView.beginUpdates()
-        tableView.endUpdates()
         
         if selectedCellIndexPath != nil {
             // This ensures, that the cell is fully visible once expanded
             tableView.scrollToRow(at: indexPath, at: .none, animated: true)
         }
         
-        // Checking if select, unselect and deselects row
-        if unselectedCellIndexPath == nil {
-            unselectedCellIndexPath = true
-        }
-        
-        if unselectedCellIndexPath == true {
-            unselectedCellIndexPath = false
-        } else {
-            unselectedCellIndexPath = true
-        }
-        
-        if unselectedCellIndexPath == true {
+        // Checking if selected or deselected row
+        if selectedCellIndexPath == nil {
             cell.configureWithDeselect(color: color)
         } else {
             cell.configureWithSelect(color: color)
         }
         
+        tableView.endUpdates()
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! ColorTableViewCell
         let color = colors[indexPath.row]
-        
         cell.configureWithDeselect(color: color)
-        
-        unselectedCellIndexPath = nil
     }
     
     
@@ -119,17 +114,39 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         
         if elementName == "color" {
             
-            var tempColor: Color = Color(colorName: "", colorCode: "")
+            var tempColor: Color = Color(colorName: "", colorCode: UIColor())
             
             if let name = attributeDict["name"] {
                 tempColor.colorName = name
             }
             
             if let code = attributeDict["color"] {
-                tempColor.colorCode = code
+                tempColor.colorCode = hexStringToUIColor(hex: code)
             }
             colors.append(tempColor)
         }
+    }
+    
+    // MARK: Convert HEX to RGB Color
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0))
     }
     
 }
