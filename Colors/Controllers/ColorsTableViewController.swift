@@ -33,6 +33,8 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
                 parser.parse()
             }
         }
+        
+        ColorTableViewCell.register(in: tableView)
     }
     
     // MARK: - Table view data source
@@ -46,17 +48,15 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> ColorTableViewCell {
         
-        let cell = Bundle.main.loadNibNamed("ColorTableViewCell", owner: self, options: nil)?.first as! ColorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ColorTableViewCell.identifier, for: indexPath) as! ColorTableViewCell
         
         let color = colors[indexPath.row]
         cell.configureWith(color: color)
         
         // select/deselect the cell
-        if cell.isSelected {
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        if cell.isSelected && selectedCellIndexPath != nil {
             cell.configureWithSelect(color: color)
         } else {
-            tableView.deselectRow(at: indexPath, animated: false)
             cell.configureWithDeselect(color: color)
         }
         
@@ -98,7 +98,6 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         let color = colors[indexPath.row]
         cell.configureWithDeselect(color: color)
     }
-    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
