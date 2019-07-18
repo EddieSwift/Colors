@@ -94,7 +94,11 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! ColorTableViewCell
+        //For iPhones that not X, XS, XS Max make correct deselect for extreme cells
+        guard let cell = tableView.cellForRow(at: indexPath) as? ColorTableViewCell else {
+            return
+        }
+        
         let color = colors[indexPath.row]
         cell.configureWithDeselect(color: color)
     }
@@ -107,7 +111,7 @@ final class ColorsTableViewController: UITableViewController, XMLParserDelegate 
         
         return unselectedCellHeight
     }
-    
+
     // MARK: XML Parser Methods
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
